@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Child: {fileID: 0}
   DrivingSurfaceManager: {fileID: 1503355846}
-  CurrentPlane: {fileID: 0}
+  CurrentPlane: {fileID: 2080369339933002911, guid: 5c528bf17058b47ba8da01f86c68d6d9, type: 3}
 --- !u!1 &898361970
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,10 +922,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e646a357e03f6f34fbdc238eafa2a35a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arPlaneManager: {fileID: 1503355848}
-  fishPrefab: {fileID: 1083132531}
-  fishSpawnDepth: 0.3
-  fishCount: 3
+  drivingSurfaceManager: {fileID: 1503355846}
+  waterPrefab: {fileID: 2080369339933002901, guid: 5c528bf17058b47ba8da01f86c68d6d9, type: 3}
 --- !u!4 &1964602099
 Transform:
   m_ObjectHideFlags: 0
@@ -1020,7 +1018,7 @@ SceneRoots:
   - {fileID: 898361973}
   - {fileID: 1391491213}
   - {fileID: 1108387036}
-  - {fileID: 760551942}
   - {fileID: 1503355850}
-  - {fileID: 370933466341712330}
   - {fileID: 1964602099}
+  - {fileID: 370933466341712330}
+  - {fileID: 760551942}
