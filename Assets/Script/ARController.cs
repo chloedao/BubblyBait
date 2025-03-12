@@ -91,17 +91,18 @@ public class ARController : MonoBehaviour
     }
 
     void AdjustWaterSize()
+{
+    if (drivingSurfaceManager.LockedPlane != null && waterInstance != null)
     {
-        if (drivingSurfaceManager.LockedPlane != null && waterInstance != null)
+        ARPlane plane = drivingSurfaceManager.LockedPlane.GetComponent<ARPlane>();
+        if (plane != null)
         {
-            ARPlane plane = drivingSurfaceManager.LockedPlane.GetComponent<ARPlane>();
-            if (plane != null)
-            {
-                // Justera vattnets storlek till AR-ytans storlek
-                waterInstance.transform.localScale = new Vector3(plane.size.x, 1, plane.size.y);
-                Debug.Log($"Vatten uppdaterat till storlek: {plane.size.x} x {plane.size.y}");
-            }
+            // Sätt storleken på vattnet till markytans storlek, men håll höjden låg
+            waterInstance.transform.localScale = new Vector3(plane.size.x, 0.01f, plane.size.y);
+            Debug.Log($"Vatten uppdaterat till storlek: {plane.size.x} x {plane.size.y}");
         }
     }
+}
+
 }
 
