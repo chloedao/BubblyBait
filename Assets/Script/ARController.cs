@@ -36,6 +36,7 @@ public class ARController : MonoBehaviour
 
             GameObject fish = Instantiate(fishPrefab, spawnPosition, Quaternion.identity);
             fish.transform.SetParent(plane.transform); // F�st p� ARPlanet
+            
         }
     }
 }
