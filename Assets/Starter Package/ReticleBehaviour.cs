@@ -14,56 +14,57 @@
  * limitations under the License.
  */
 
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+    using System.Collections;
+    using System.Collections.Generic;
+     using System.Linq;
 
-using Unity.Collections;
-using UnityEngine;
-using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARSubsystems;
+    using Unity.Collections;
+    using UnityEngine;
+    using UnityEngine.XR.ARFoundation;
+    using UnityEngine.XR.ARSubsystems;
 
-public class ReticleBehaviour : MonoBehaviour
-{
-    public GameObject Child;
-    public DrivingSurfaceManager DrivingSurfaceManager;
-
-    public ARPlane CurrentPlane;
-
-    // Start is called before the first frame update
-    private void Start()
+    public class ReticleBehaviour : MonoBehaviour
     {
-        Child = transform.GetChild(0).gameObject;
-    }
+        public GameObject Child;
+        public DrivingSurfaceManager DrivingSurfaceManager;
 
-    private void Update()
-    {
-        // TODO: Conduct a ray cast to position this object.
+        public ARPlane CurrentPlane;
 
-        var screenCenter = Camera.main.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
-
-        var hits = new List<ARRaycastHit>();
-        DrivingSurfaceManager.RaycastManager.Raycast(screenCenter, hits, TrackableType.PlaneWithinBounds); 
-
-        CurrentPlane = null;
-        ARRaycastHit? hit = null;
-        if (hits.Count > 0)
+        // Start is called before the first frame update
+        private void Start()
         {
-         // If you don't have a locked plane already...
-        var lockedPlane = DrivingSurfaceManager.LockedPlane;
-        hit = lockedPlane == null
+            Child = transform.GetChild(0).gameObject;
+        }
+
+        private void Update()
+        {
+            // TODO: Conduct a ray cast to position this object.
+
+            var screenCenter = Camera.main.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
+
+            var hits = new List<ARRaycastHit>();
+DrivingSurfaceManager.RaycastManager.Raycast(screenCenter, hits, TrackableType.PlaneWithinBounds);
+
+            CurrentPlane = null;
+ARRaycastHit? hit = null;
+if (hits.Count > 0)
+{
+    // If you don't have a locked plane already...
+    var lockedPlane = DrivingSurfaceManager.LockedPlane;
+    hit = lockedPlane == null
         // ... use the first hit in `hits`.
         ? hits[0]
         // Otherwise use the locked plane, if it's there.
         : hits.SingleOrDefault(x => x.trackableId == lockedPlane.trackableId);
-        }
-
-        if (hit.HasValue)
+}
+ 
+ if (hit.HasValue)
 {
     CurrentPlane = DrivingSurfaceManager.PlaneManager.GetPlane(hit.Value.trackableId);
     // Move this reticle to the location of the hit.
     transform.position = hit.Value.pose.position;
-}       
-        Child.SetActive(CurrentPlane != null);
+}
+Child.SetActive(CurrentPlane != null);
+
     }
 }
