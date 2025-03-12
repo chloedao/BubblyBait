@@ -343,7 +343,7 @@ MonoBehaviour:
       m_Calls: []
   m_SerializedLibrary: {fileID: 11400000, guid: 1b3d269bf8121cb438c9d1d79c5683eb, type: 2}
   m_MaxNumberOfMovingImages: 0
-  m_TrackedImagePrefab: {fileID: 0}
+  m_TrackedImagePrefab: {fileID: 5547444911993876609, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
 --- !u!1 &1083132531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4068275098032769657, guid: ab1be3ee69248d34d97efd2595865dde, type: 3}
