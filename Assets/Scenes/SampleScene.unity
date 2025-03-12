@@ -292,7 +292,7 @@ MonoBehaviour:
       m_Calls: []
   m_SerializedLibrary: {fileID: 11400000, guid: 1b3d269bf8121cb438c9d1d79c5683eb, type: 2}
   m_MaxNumberOfMovingImages: 0
-  m_TrackedImagePrefab: {fileID: 3161715145795376584}
+  m_TrackedImagePrefab: {fileID: 0}
 --- !u!1 &1083132531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4068275098032769657, guid: ab1be3ee69248d34d97efd2595865dde, type: 3}
@@ -962,106 +962,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1083132534}
   m_SourcePrefab: {fileID: 100100000, guid: ab1be3ee69248d34d97efd2595865dde, type: 3}
---- !u!1001 &3161715145795376583
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5167787585908582971, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.25003204
-      objectReference: {fileID: 0}
-    - target: {fileID: 5167787585908582971, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.16591989
-      objectReference: {fileID: 0}
-    - target: {fileID: 5167787585908582971, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.06513361
-      objectReference: {fileID: 0}
-    - target: {fileID: 5167787585908582971, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5167787585908582971, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5167787585908582971, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.49999997
-      objectReference: {fileID: 0}
-    - target: {fileID: 5167787585908582971, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5167787585908582971, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5167787585908582971, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5167787585908582971, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5547444911993876609, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
-      propertyPath: m_Name
-      value: FishingRod
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5547444911993876609, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3161715145795376587}
-    - targetCorrespondingSourceObject: {fileID: 5547444911993876609, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3161715145795376586}
-  m_SourcePrefab: {fileID: 100100000, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
---- !u!1 &3161715145795376584 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5547444911993876609, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
-  m_PrefabInstance: {fileID: 3161715145795376583}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3161715145795376586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3161715145795376584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0cb9aa70a22847b5925ee5f067c10a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Camera: {fileID: 0}
-  m_OriginBaseGameObject: {fileID: 3161715145795376584}
-  m_CameraFloorOffsetObject: {fileID: 0}
-  m_RequestedTrackingOriginMode: 0
-  m_CameraYOffset: 1.1176
---- !u!114 &3161715145795376587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3161715145795376584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb6ae5570373b948874239979b20f5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imageManager: {fileID: 0}
-  fishingRodPrefab: {fileID: 5547444911993876609, guid: d43293e381b312b4ca8b4589128141ad, type: 3}
-  trackingThreshold: 0.1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1071,6 +971,5 @@ SceneRoots:
   - {fileID: 1108387036}
   - {fileID: 1503355850}
   - {fileID: 370933466341712330}
-  - {fileID: 3161715145795376583}
   - {fileID: 124436874}
   - {fileID: 380319568}
