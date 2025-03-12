@@ -119,7 +119,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &760551942
+--- !u!1 &70528974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 70528976}
+  - component: {fileID: 70528975}
+  m_Layer: 0
+  m_Name: ARController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &70528975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70528974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e646a357e03f6f34fbdc238eafa2a35a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drivingSurfaceManager: {fileID: 1503355846}
+  waterPrefab: {fileID: 2080369339933002901, guid: 5c528bf17058b47ba8da01f86c68d6d9, type: 3}
+--- !u!4 &70528976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70528974}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.4459055, y: 0.021476045, z: -0.6390506}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &279541591
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -177,20 +223,20 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5278573886475851323, guid: c0ffd6e32415c45f59e277fe7314020d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 760551944}
+      addedObject: {fileID: 279541593}
   m_SourcePrefab: {fileID: 100100000, guid: c0ffd6e32415c45f59e277fe7314020d, type: 3}
---- !u!1 &760551943 stripped
+--- !u!1 &279541592 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5278573886475851323, guid: c0ffd6e32415c45f59e277fe7314020d, type: 3}
-  m_PrefabInstance: {fileID: 760551942}
+  m_PrefabInstance: {fileID: 279541591}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &760551944
+--- !u!114 &279541593
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760551943}
+  m_GameObject: {fileID: 279541592}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c357a1c3669144ca184d86b7c3e43c6b, type: 3}
@@ -198,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Child: {fileID: 0}
   DrivingSurfaceManager: {fileID: 1503355846}
-  CurrentPlane: {fileID: 2080369339933002911, guid: 5c528bf17058b47ba8da01f86c68d6d9, type: 3}
+  CurrentPlane: {fileID: 0}
 --- !u!1 &898361970
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlaneManager: {fileID: 0}
-  RaycastManager: {fileID: 0}
+  RaycastManager: {fileID: 1503355847}
   LockedPlane: {fileID: 0}
 --- !u!114 &1503355847
 MonoBehaviour:
@@ -893,52 +939,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!1 &1964602097
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1964602099}
-  - component: {fileID: 1964602098}
-  m_Layer: 0
-  m_Name: ARController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1964602098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1964602097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e646a357e03f6f34fbdc238eafa2a35a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drivingSurfaceManager: {fileID: 1503355846}
-  waterPrefab: {fileID: 2080369339933002901, guid: 5c528bf17058b47ba8da01f86c68d6d9, type: 3}
---- !u!4 &1964602099
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1964602097}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4459055, y: 0.021476045, z: -0.6390506}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &370933466341712330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1019,6 +1019,6 @@ SceneRoots:
   - {fileID: 1391491213}
   - {fileID: 1108387036}
   - {fileID: 1503355850}
-  - {fileID: 1964602099}
   - {fileID: 370933466341712330}
-  - {fileID: 760551942}
+  - {fileID: 279541591}
+  - {fileID: 70528976}

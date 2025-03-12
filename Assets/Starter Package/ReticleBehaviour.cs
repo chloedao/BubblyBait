@@ -36,37 +36,34 @@ public class ReticleBehaviour : MonoBehaviour
         Child = transform.GetChild(0).gameObject;
     }
 
-private void Update()
+    private void Update()
+    {
+        // TODO: Conduct a ray cast to position this object.
+        var screenCenter = Camera.main.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
+
+        var hits = new List<ARRaycastHit>();
+DrivingSurfaceManager.RaycastManager.Raycast(screenCenter, hits, TrackableType.PlaneWithinBounds);
+
+CurrentPlane = null;
+ARRaycastHit? hit = null;
+if (hits.Count > 0)
 {
-    var screenCenter = Camera.main.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
-
-    var hits = new List<ARRaycastHit>();
-    DrivingSurfaceManager.RaycastManager.Raycast(screenCenter, hits, TrackableType.PlaneWithinBounds);
-
-    CurrentPlane = null;
-    ARRaycastHit? hit = null;
-    
-    if (hits.Count > 0)
-    {
-        var lockedPlane = DrivingSurfaceManager.LockedPlane;
-        hit = lockedPlane == null ? hits[0] : hits.SingleOrDefault(x => x.trackableId == lockedPlane.trackableId);
-    }
-
-    if (hit.HasValue)
-    {
-        // Om en AR-yta hittas, flytta reticle till ytan
-        CurrentPlane = DrivingSurfaceManager.PlaneManager.GetPlane(hit.Value.trackableId);
-        transform.position = hit.Value.pose.position;
-    }
-    else
-    {
-        // Om INGEN AR-yta hittas, sätt reticle framför kameran
-        var cameraTransform = Camera.main.transform;
-        transform.position = cameraTransform.position + cameraTransform.forward * 0.5f; // 0.5 meter framför kameran
-    }
-
-    // Aktivera eller dölj reticle baserat på om vi har en AR-yta
-    Child.SetActive(true); // Nu syns reticle ALLTID
+    // If you don't have a locked plane already...
+    var lockedPlane = DrivingSurfaceManager.LockedPlane;
+    hit = lockedPlane == null
+        // ... use the first hit in `hits`.
+        ? hits[0]
+        // Otherwise use the locked plane, if it's there.
+        : hits.SingleOrDefault(x => x.trackableId == lockedPlane.trackableId);
 }
 
+if (hit.HasValue)
+{
+    CurrentPlane = DrivingSurfaceManager.PlaneManager.GetPlane(hit.Value.trackableId);
+    // Move this reticle to the location of the hit.
+    transform.position = hit.Value.pose.position;
+}
+Child.SetActive(CurrentPlane != null);
+
+    }
 }
